@@ -27,6 +27,7 @@ class ZkmasterinfoPipeline(object):
         cur = self.conn.cursor()
 
         name = item['name']
+        nick_name = item['nick_name']
         uid = item['uid']
         img = item['img']
         info = item['info']
@@ -34,9 +35,9 @@ class ZkmasterinfoPipeline(object):
         index = item['index']
         blog = item['blog']
 
-        sql = "INSERT INTO " + self.movie_table_name + " (name, uid, img, info, isVip, blog)" \
-                                                       " VALUES (%s, %s, %s, %s, %s, %s)"
-        cur.execute(sql, (name, uid, img, info, isVip, blog))
+        sql = "INSERT INTO " + self.movie_table_name + " (name, nick_name, uid, img, info, isVip, blog)" \
+                                                       " VALUES (%s, %s, %s, %s, %s, %s, %s)"
+        cur.execute(sql, (name, nick_name, uid, img, info, isVip, blog))
         cur.close()
         self.conn.commit()
 

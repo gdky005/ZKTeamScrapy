@@ -14,6 +14,7 @@ class ZkmasterinfoItem(scrapy.Item):
 
     id = scrapy.Field()
     name = scrapy.Field()
+    nick_name = scrapy.Field()
     uid = scrapy.Field()
     img = scrapy.Field()
     info = scrapy.Field()

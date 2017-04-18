@@ -13,6 +13,8 @@ class ZkmasterarticleItem(scrapy.Item):
     # name = scrapy.Field()
 
     uid = scrapy.Field()
+    name = scrapy.Field()
+    nick_name = scrapy.Field()
     des = scrapy.Field()
     article_title = scrapy.Field()
     article_address = scrapy.Field()

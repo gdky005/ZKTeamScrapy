@@ -27,13 +27,15 @@ class ZkmasterarticlePipeline(object):
         cur = self.conn.cursor()
 
         uid = item['uid']
+        name = item['name']
+        nick_name = item['nick_name']
         des = item['des']
         article_title = item['article_title']
         article_address = item['article_address']
 
-        sql = "INSERT INTO " + self.movie_table_name + " (uid, des, article_title, article_address)" \
-                                                       " VALUES (%s, %s, %s, %s)"
-        cur.execute(sql, (uid, des, article_title, article_address))
+        sql = "INSERT INTO " + self.movie_table_name + " (uid, name, nick_name, des, article_title, article_address)" \
+                                                       " VALUES (%s, %s, %s, %s, %s, %s)"
+        cur.execute(sql, (uid, name, nick_name, des, article_title, article_address))
         cur.close()
         self.conn.commit()
 

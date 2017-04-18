@@ -15,11 +15,13 @@ class MasterInfo(CrawlSpider):
         selector = Selector(response)
 
         name = selector.xpath('//span/a[@class="user_name"]/text()').extract()[0]  # 用户名
+        nick_name = selector.xpath('//div[@id="blog_title"]/h2/a/text()').extract()[0]  # 昵称
         info = selector.xpath('//h3/text()').extract()[0]  # 用户名
         user_img = selector.xpath('//div[@id="blog_userface"]/a/img/@src').extract()[0]  # 用户图像
         blog = response.url  # 当前 url
 
         item['name'] = name
+        item['nick_name'] = nick_name
         item['uid'] = '10001'
         item['img'] = user_img
         item['info'] = info
