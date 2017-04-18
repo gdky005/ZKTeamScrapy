@@ -13,6 +13,7 @@ BOT_NAME = 'ZKMasterArticle'
 
 SPIDER_MODULES = ['ZKMasterArticle.spiders']
 NEWSPIDER_MODULE = 'ZKMasterArticle.spiders'
+ITEM_PIPELINES = {'ZKMasterArticle.pipelines.ZkmasterarticlePipeline': 800, }
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
