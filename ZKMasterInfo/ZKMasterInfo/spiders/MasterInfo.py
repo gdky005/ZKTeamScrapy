@@ -5,7 +5,15 @@ from ZKMasterInfo.items import ZkmasterinfoItem
 
 class MasterInfo(CrawlSpider):
     name = "MasterInfo"  # 爬虫命名
-    start_urls = ['http://blog.csdn.net/singwhatiwanna?viewmode=contents']  # 要爬取的页面地址
+    start_urls = ['http://blog.csdn.net/lmj623565791?viewmode=contents',
+                  'http://blog.csdn.net/lfdfhl?viewmode=contents',
+                  'http://blog.csdn.net/jdsjlzx?viewmode=contents',
+                  'http://blog.csdn.net/lpjishu?viewmode=contents',
+                  'http://blog.csdn.net/harvic880925?viewmode=contents',
+                  'http://blog.csdn.net/iwanghang?viewmode=contents',
+                  'http://blog.csdn.net/hejjunlin?viewmode=contents',
+                  'http://blog.csdn.net/qq_26787115?viewmode=contents',
+                  'http://blog.csdn.net/singwhatiwanna?viewmode=contents', ]  # 要爬取的页面地址
 
     def parse(self, response):
         print(response.body.decode('utf-8'))
