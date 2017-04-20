@@ -2,6 +2,8 @@ from scrapy import Selector
 from scrapy.spiders import CrawlSpider
 from ZKMasterInfo.items import ZkmasterinfoItem
 
+from HashCode import getHashCode
+
 
 class MasterInfo(CrawlSpider):
     name = "MasterInfo"  # 爬虫命名
@@ -30,7 +32,7 @@ class MasterInfo(CrawlSpider):
 
         item['name'] = name
         item['nick_name'] = nick_name
-        item['uid'] = '10001'
+        item['uid'] = getHashCode(response.url)
         item['img'] = user_img
         item['info'] = info
         item['isVip'] = '1'
